@@ -25,6 +25,7 @@ import lombok.NoArgsConstructor;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Student_id")
     private long id;
     
     @Column(name = "Name", nullable = false)
