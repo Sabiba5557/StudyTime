@@ -1,37 +1,26 @@
 package com.StudyTime.app.models;
 
-import java.time.LocalDateTime;
-
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import java.time.LocalDate;
 
 @Entity
-@Table(name = "Complaint")
+@Table(name = "Admin_Borrow_Record")
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class Complaint {
+@AllArgsConstructor
+public class AdminBorrowRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Complaint_Id", nullable = false)
-    private Long complaintId;
-
-    @Column(name = "Complain_Category", nullable = false)
-    private String complainCategory;
-
-    @Column(name = "Description", nullable = false)
-    private String description;
-
-    @Column(name = "Submission_Date", nullable = false)
-    private LocalDateTime submissionDate;
-
-    @Column(name = "Status", nullable = false)
-    private String status;
+    @Column(name = "Record_Id", nullable = false)
+    private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "Student_Id", nullable = false)
-    private Student student;
-
+    @JoinColumn(name = "Admin_Id", nullable = false)
+    private Administrator admin;
+    @ManyToOne
+    @JoinColumn(name = "Borrow_Id", nullable = false)
+    private BorrowRecord borrowRecord;
 }
