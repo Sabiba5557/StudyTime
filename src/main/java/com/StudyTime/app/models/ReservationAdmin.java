@@ -13,11 +13,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ReservationAdmin {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Reservation_Admin_Id")
+    private Long id;
+
     @ManyToOne
-    @JoinColumn(name = "Reservation_id", nullable = false)
+    @JoinColumn(name = "Reservation_Id", nullable = false)
     private Reservation reservation;
 
     @ManyToOne
-    @JoinColumn(name = "Admin_id", nullable = false)
+    @JoinColumn(name = "Admin_Id", nullable = false)
     private Administrator admin;
 }
