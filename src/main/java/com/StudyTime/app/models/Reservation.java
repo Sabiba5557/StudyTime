@@ -15,8 +15,8 @@ import lombok.NoArgsConstructor;
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Reservation_id")
-    private long id;
+    @Column(name = "Reservation_Id")
+    private Long id;
 
     @Column(name = "Booking_Date", nullable = false)
     private LocalDateTime bookingDate;
@@ -31,7 +31,7 @@ public class Reservation {
     private String reservationStatus;
 
     @ManyToOne
-    @JoinColumn(name = "Student_id", nullable = false)
+    @JoinColumn(name = "Student_Id", nullable = false)
     private Student student;
 
     @ManyToOne(fetch = FetchType.LAZY)
