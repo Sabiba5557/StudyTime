@@ -25,8 +25,8 @@ import lombok.NoArgsConstructor;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Student_id")
-    private long id;
+    @Column(name = "Student_Id")
+    private Long id;
     
     @Column(name = "Name", nullable = false)
     private String name;
@@ -46,13 +46,13 @@ public class Student {
     @Column(name = "Dept_Name", nullable = false)
     private String deptName;
 
-    @Column(name = "Room_Number", nullable = false)
+    @Column(name = "Room_No", nullable = false)
     private int roomNumber;
 
     @ElementCollection
     @CollectionTable(
         name = "S_Phone",
-        joinColumns = { @JoinColumn(name = "Student_id") }
+        joinColumns = { @JoinColumn(name = "Student_Id") }
     )
     @Column(name = "Phone_no")
     private Set<String> phoneNumbers;
